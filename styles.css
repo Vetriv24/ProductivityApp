@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+}
+
+/* Clock Section */
+.clock-section {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.clock {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: #111;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.clock-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-3px);
+}
+
+.hand {
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background: #fff;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.hour-hand {
+    width: 30%;
+    left: 20%;
+    height: 4px;
+}
+
+.minute-hand {
+    width: 40%;
+    left: 10%;
+    height: 3px;
+}
+
+.second-hand {
+    width: 45%;
+    left: 5%;
+    height: 2px;
+    background: #ff4444;
+}
+
+.center-point {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.digital-time {
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Stopwatch Section */
+.stopwatch-section {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: center;
+    padding: 20px;
+    background-color: #111;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+}
+
+.timer-display {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.timer-controls button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.timer-controls button:hover {
+    background-color: #444;
+}
+
+/* Todo Section */
+.todo-section {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 20px;
+    background-color: #111;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.todo-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.todo-input input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+}
+
+.todo-input button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+#todoList {
+    list-style: none;
+    margin-top: 20px;
+}
+
+#todoList li {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #222;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Calendar Section */
+.calendar-section {
+    grid-column: 3;
+    grid-row: 2;
+    padding: 20px;
+    background-color: #111;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.date-time {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#currentDate {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#currentTime {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.calendar {
+    background-color: #222;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar-grid div {
+    text-align: center;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.calendar-grid .today {
+    background-color: #333;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    
+    .stopwatch-section,
+    .todo-section,
+    .clock-section,
+    .calendar-section {
+        grid-column: 1;
+        grid-row: auto;
+    }
+} 

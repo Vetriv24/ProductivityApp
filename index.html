@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productive App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Stopwatch Section -->
+        <div class="stopwatch-section">
+            <div class="timer-display">00:00:00</div>
+            <div class="timer-controls">
+                <button id="startBtn">Start</button>
+                <button id="pauseBtn">Pause</button>
+                <button id="resetBtn">Reset</button>
+            </div>
+        </div>
+
+        <!-- Todo List Section -->
+        <div class="todo-section">
+            <h2>To-Do List</h2>
+            <div class="todo-input">
+                <input type="text" id="todoInput" placeholder="Add a new task...">
+                <button id="addTodoBtn">Add</button>
+            </div>
+            <ul id="todoList"></ul>
+        </div>
+
+        <!-- Clock Section -->
+        <div class="clock-section">
+            <div class="clock">
+                <div class="clock-face">
+                    <div class="hand hour-hand"></div>
+                    <div class="hand minute-hand"></div>
+                    <div class="hand second-hand"></div>
+                    <div class="center-point"></div>
+                </div>
+                <div class="digital-time"></div>
+            </div>
+        </div>
+
+        <!-- Calendar Section -->
+        <div class="calendar-section">
+            <div class="calendar">
+                <div class="calendar-header">
+                    <button id="prevMonth">&lt;</button>
+                    <h3 id="currentMonth"></h3>
+                    <button id="nextMonth">&gt;</button>
+                </div>
+                <div class="calendar-grid" id="calendarGrid"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
